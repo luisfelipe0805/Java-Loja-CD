@@ -50,6 +50,13 @@ public class CdDAO {
 	
 	}
 	
+	
+	/**
+	 * Atualizar CD
+	 * @param id
+	 * @param cdNew
+	 * @return
+	 */
 	public boolean updateCD(int id,CD cdNew) {
 		con=ConnetionFactory.getConnection();
 		PreparedStatement stmt = null;
