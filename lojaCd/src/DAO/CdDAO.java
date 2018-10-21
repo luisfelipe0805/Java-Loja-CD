@@ -19,7 +19,7 @@ public class CdDAO {
 		
 	}
 	/**
-	 * 
+	 * Inserçção de um ced
 	 * @param cd
 	 * @return
 	 */
