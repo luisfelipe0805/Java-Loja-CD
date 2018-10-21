@@ -10,15 +10,18 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JPasswordField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JButton;
 import java.awt.Label;
 import javax.swing.ImageIcon;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class TelaLogin extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField loginText;
-	private JPasswordField passwordField;
+	private JTextField txtUser;
+	private JPasswordField txtPassword;
 
 	/**
 	 * Launch the application.
@@ -41,20 +44,20 @@ public class TelaLogin extends JFrame {
 	 */
 	public TelaLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 581, 408);
+		setBounds(100, 100, 580, 400);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		loginText = new JTextField();
-		loginText.setBounds(155, 201, 226, 20);
-		contentPane.add(loginText);
-		loginText.setColumns(10);
+		txtUser = new JTextField();
+		txtUser.setBounds(155, 201, 226, 20);
+		contentPane.add(txtUser);
+		txtUser.setColumns(10);
 		
-		passwordField = new JPasswordField();
-		passwordField.setBounds(154, 254, 226, 20);
-		contentPane.add(passwordField);
+		txtPassword = new JPasswordField();
+		txtPassword.setBounds(154, 254, 226, 20);
+		contentPane.add(txtPassword);
 		
 		JLabel lblUsuario = new JLabel("Usuario");
 		lblUsuario.setBounds(157, 181, 46, 14);
@@ -65,6 +68,18 @@ public class TelaLogin extends JFrame {
 		contentPane.add(lblSenha);
 		
 		JButton btnEntrar = new JButton("Entrar");
+		btnEntrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				if (txtUser.getText().equals("admin") && txtPassword.getText().equals("admin")) {
+					JOptionPane.showMessageDialog(null, "Bem Vindo");
+				}else {
+					JOptionPane.showMessageDialog(null, "Erro ao efetuar Login", "Login", NORMAL);
+				}
+			}
+			
+			
+		});
 		btnEntrar.setBounds(338, 305, 89, 23);
 		contentPane.add(btnEntrar);
 		
