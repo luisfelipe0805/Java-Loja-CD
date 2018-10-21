@@ -18,7 +18,11 @@ public class CdDAO {
 	public CdDAO() {
 		
 	}
-	
+	/**
+	 * 
+	 * @param cd
+	 * @return
+	 */
 	public boolean insertCD(CD cd) {
 		con=ConnetionFactory.getConnection();
 		PreparedStatement stmt = null;
