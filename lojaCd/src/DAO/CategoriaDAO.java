@@ -3,7 +3,6 @@ package DAO;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-
 import conexaoBD.ConnetionFactory;
 import modelBean.CategoriaCD;
 
@@ -11,9 +10,8 @@ public class CategoriaDAO {
 	private Connection con = null;
 
 	public CategoriaDAO() {
-	
+		 con = null;
 	}
-	
 	
 	public boolean insertCategoria(CategoriaCD categoria) {
 		con=ConnetionFactory.getConnection();
@@ -36,7 +34,6 @@ public class CategoriaDAO {
 			ConnetionFactory.closeConnection(con,stmt);
 		}
 }
-	
 	
 	
 }
